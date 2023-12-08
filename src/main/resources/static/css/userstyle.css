@@ -1,0 +1,92 @@
+body {
+	background: #e2e2e2 !important;
+}
+.bg-primary {
+	background: #009688 !important;
+}
+.navbar-brand {
+	padding-left: 12px;
+}
+.navbar-nav {
+	padding-left: 78%;
+}
+/*sidebar style*/
+
+@media only screen and (max-width:600px){
+	.sidebar{
+		display: none;
+		width: 80% !important;
+		background: white;
+		position: fixed;
+		padding-top: 20px;
+	}
+	.content{
+		margin-left: 0% !important;
+	}
+}
+.sidebar{
+	width: 18%;
+	background: white;
+	height: 100%;
+	position: fixed;
+	z-index: 99999999999999999999999999999;
+}
+.sidebar a{
+	display: block;
+	width: 100%;
+	color: grey;
+	text-decoration: none;
+	padding: 10px 25px;
+	
+}
+.item1{
+	margin-top: 45px;
+}
+.sidebar a:hover{
+	background: #009688;
+	color: aliceblue;
+}
+
+.sidebar .crossBtn{
+	position: absolute;
+	top: 0;
+	right: 35px;
+	font-size: 36px;
+	cursor: pointer;
+	
+}
+/* content */
+
+.content{
+	margin-left: 20%;
+}
+.content .fas{
+	font-size: 25px;
+	cursor: pointer;
+}
+.card{
+	margin-right: 20px;
+	margin-left: 20px;
+}
+#email-sign{
+	padding-right: 16px;
+	padding-left: 16px;
+	font-size: 20px;
+}
+
+.container{
+	width: 400px;
+}
+.my_profile_picture{
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	border: 1px solid black;
+
+}
+.text{
+	text-align: center;
+	margin-top: 10px;
+	font-style: italic;
+	font-weight: lighter;
+}

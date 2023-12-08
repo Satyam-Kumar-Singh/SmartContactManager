@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title th:text="${tittle}">add contact</title>
+
+</head>
+
+
+<body>
+
+	<section>
+
+		<div class="card ">
+			
+			
+			<div class="card-body">
+				<h1 class="text-center">Add Contact</h1>
+				<div class="container-fluid mt-1">
+					<div class="row">
+						<div class="col-md-8 offset-md-2">
+
+							<form action="#" th:object="${contact}" enctype="multipart/form-data" method="POST"
+								th:action="@{/user/process-contact}" class="mt-2">
+
+								<!-- first name -->
+								
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<div class="input-group-text mr-3">
+											<i class="fas fa-plus"></i>
+										</div>
+
+									</div>
+
+									<input required type="text" id="firstname" name="name" placeholder="Enter Name here"
+										class="form-control">
+
+								</div>
+
+								<!-- second  name -->
+								<div class="input-group mt-3">
+									<div class="input-group-prepend">
+										<div class="input-group-text mr-3">
+											<i class="fas fa-user-alt"></i>
+										</div>
+
+									</div>
+
+									<input  type="text" id="secondName" name="secondName"
+										placeholder="Enter Nick Name here" class="form-control">
+
+								</div>
+								<!-- phone -->
+								<div class="input-group mt-3">
+									<div class="input-group-prepend">
+										<div class="input-group-text mr-3">
+											<i class="fas fa-phone"></i>
+										</div>
+
+									</div>
+
+									<input required type="number" id="phone" name="phone" placeholder="Enter Phone here"
+										class="form-control">
+
+								</div>
+								<!-- email -->
+								<div class="input-group mt-3">
+									<div class="input-group-prepend">
+										<div id="email-sign" class="input-group-text mr-3">
+											@
+										</div>
+
+									</div>
+
+									<input required type="email" id="email" name="email" placeholder="Enter Email here"
+										class="form-control">
+
+								</div>
+								<!-- work field -->
+								<div class="input-group mt-3">
+									<div class="input-group-prepend">
+										<div class="input-group-text mr-3">
+											<i class="fas fa-briefcase"></i>
+										</div>
+
+									</div>
+
+									<input required type="text" id="work" name="work" placeholder="Enter Work here"
+										class="form-control">
+
+								</div>
+								<!-- contact description -->
+								<div class="input-group mt-3">
+
+									<textarea  placeholder="Enter contact description" name="description" id="textarea"
+										rows="10" class="form-control"></textarea>
+								</div>
+
+								<!-- contact profile -->
+								<div class="custom-file mt-3">
+									<input type="file" name="profileImage" />
+								</div>
+
+								<div class="container text-center mt-3">
+
+									<button class="btn btn-outline-primary">Save Contact</button>
+								</div>
+
+							</form>
+
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+
+		</div>
+
+		<!-- use tiny mce  -->
+
+		<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+		<script>
+			tinymce.init({
+				selector: '#textarea',
+				height: 400,
+				width: 800,
+				plugins: [
+					'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+					'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+					'insertdatetime', 'media', 'table', 'help', 'wordcount'
+				],
+				toolbar: 'undo redo | blocks | ' +
+					'bold italic backcolor | alignleft aligncenter ' +
+					'alignright alignjustify | bullist numlist outdent indent | ' +
+					'removeformat | help',
+				content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+			});
+		</script>
+	</section>
+</body>
+
+</html>
